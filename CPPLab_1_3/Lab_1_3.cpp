@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Windows.h>
+#define MAX_SIZE 20
 using namespace std;
 
 // —оздать динамические массивы, использу€ указатели. ƒано 2 массива х(n) и
@@ -11,11 +12,14 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	const int n{ 5 }, m{ 10 };
-	cout << "–азмеры массивов n и m: " << n << " и " << m << " соответственно" << endl;
+	cout << "¬ведите размеры массива x(n) и y(m): ";
+	int n, m;
+	cin >> n >> m;
+	cout << "–азмеры массивов n и m: " << n << " и " << m << \
+		" соответственно" << endl;
 
-	int x[n];
-	int y[m];
+	int x[MAX_SIZE];
+	int y[MAX_SIZE];
 	int* x_pointer{ x };
 	int* y_pointer{ y };
 
@@ -41,7 +45,8 @@ int main()
 		*(y_pointer + i) == last_x ? k++: k;
 	}
 
-	cout << "ѕоследнее число первого массива встречаетс€ во втором " << k << " раз(а)" << endl;
+	cout << "ѕоследнее число первого массива встречаетс€ во втором "\
+		<< k << " раз(а)" << endl;
 
 	system("pause");
 	return 1;
